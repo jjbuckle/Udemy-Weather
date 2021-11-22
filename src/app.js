@@ -4,6 +4,7 @@ const hbs = require('hbs')
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
+//Test comment
 const publicDir = path.join(__dirname, '..', '/public')
 const viewsPath = path.join(__dirname, '..', '/templates/views')
 const partialsPath = path.join(__dirname, '..', '/templates/partials')
