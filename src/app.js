@@ -22,21 +22,21 @@ app.use(express.static(publicDir))
 
 app.get('', (req, res) => {
     res.render('index', {
-        title: 'The Index homepage',
+        title: 'Home',
         author: 'Jonathan Buckle'
     })
 })
 
 app.get('/about', (req, res) => {
     res.render('about', {
-        title: 'About this weather app',
+        title: 'About',
         author: 'Jonathan Buckle'
     })
 })
 
 app.get('/help', (req, res) => {
     res.render('help', {
-        title: 'This is the help page',
+        title: 'Help',
         author: 'Jonathan Buckle',
         helpMessage: 'It is so embarrassing that you needed to look at the help screen...'
     })
@@ -69,17 +69,6 @@ app.get('/weather', ({ query } = {}, res) => {
             })
         })
     }
-})
-
-app.get('/products', (req, res) => {
-    if (!req.query.search) {
-        return res.send({
-            error: 'You must provide a search term'
-        })
-    }
-    res.send({
-        products: []
-    })
 })
 
 app.get('/help/*', (req, res) => {
