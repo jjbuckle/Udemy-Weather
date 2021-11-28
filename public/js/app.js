@@ -11,7 +11,7 @@ const messageTwo = document.getElementById('message-2')
 weatherForm.addEventListener('submit', (e) => {
 
     e.preventDefault()
-    const weatherQueryURL = 'http://localhost:3000/weather?address=' + searchElement.value
+    const weatherQueryURL = '/weather?address=' + searchElement.value
 
     messageOne.textContent = 'Loading...'
     messageTwo.textContent = ''
