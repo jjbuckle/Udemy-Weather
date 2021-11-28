@@ -15,8 +15,9 @@ const forecast = (lat, long, callback) => {
             } else {
                 const temp = apiData.current.temperature
                 const feelsLike = apiData.current.feelslike
+                const weatherDescription = apiData.current.weather_descriptions[0]
 
-                callback(undefined, 'It is currently ' + temp + ' degrees out. It feels like ' + feelsLike + ' degrees out!')
+                callback(undefined, weatherDescription + ': It is currently ' + temp + ' degrees out. It feels like ' + feelsLike + ' degrees out!')
             }
         }
     )
