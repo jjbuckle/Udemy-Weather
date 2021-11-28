@@ -1,4 +1,5 @@
 const request = require('postman-request')
+require('./stringutils.js')
 
 const weatherstackAPIBaseURL = 'http://api.weatherstack.com/current'
 const weatherstackAPIKey = 'feee913d438aafa27dcd5d62085c1c81'
@@ -16,8 +17,9 @@ const forecast = (lat, long, callback) => {
                 const temp = apiData.current.temperature
                 const feelsLike = apiData.current.feelslike
                 const weatherDescription = apiData.current.weather_descriptions[0]
+                const forecastText = '{0}: It is currently {1} degrees out. It feels like {2} degrees.'.format(weatherDescription, temp, feelsLike)
 
-                callback(undefined, weatherDescription + ': It is currently ' + temp + ' degrees out. It feels like ' + feelsLike + ' degrees out!')
+                callback(undefined, forecastText)
             }
         }
     )
